@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Pedidos"
+    }
+  },
+  "defaultProject": "Pedidos",
+  "cli": {
+    "analytics": "580259e9-a273-48a0-8345-34b581898f45"
+  }
 }
