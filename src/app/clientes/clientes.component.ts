@@ -17,13 +17,14 @@ interface Productos{
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit {
-  clientes: Array<Clientes> = new Array<Clientes>();
-  productos: Array<Productos> = new Array<Productos>();
 
   constructor() { }
 
-  ngOnInit(): void {
-    /* this.clientes.push({
+  ngOnInit(): void {}
+
+  guardarCliente(){
+    let agregarClientes: Array<Clientes> = new Array<Clientes>();
+    agregarClientes.push({
       nombre: "Jazmín",
       apellido: "Santiago",
       edad: 23
@@ -33,29 +34,23 @@ export class ClientesComponent implements OnInit {
       apellido: "Torres",
       edad: 25
     }
-    ) */
+    )
+    localStorage.setItem("clientes", JSON.stringify(agregarClientes))
+  }
 
-    this.productos.push({
+  guardarProductos(){
+    let agregarProductos: Array<Productos> = new Array<Productos>();
+    agregarProductos.push({
       nombre: "Lavadora",
       precio: 6700
     },
     {
       nombre: "Secadora",
       precio: 2670
-    })
-  }
+    }
 
-  guardarCliente(){
-    localStorage.setItem("clientes", JSON.stringify(this.clientes))
-  }
-
-  guardarProductos(){
-    localStorage.setItem("productos", JSON.stringify(this.productos))
-  }
-
-  leer(){
-    this.clientes = JSON.parse(localStorage.getItem("clientes"))
-    this.productos = JSON.parse(localStorage.getItem("productos"))
+    )
+    localStorage.setItem("productos", JSON.stringify(agregarProductos))
   }
 
   eliminarClientes(){
@@ -70,4 +65,20 @@ export class ClientesComponent implements OnInit {
     localStorage.clear()
   }
 
+  get clientesLocales(): Clientes[]{
+    let clientesLocalStorage: Clientes[] = JSON.parse(localStorage.getItem("clientes"))
+    if(clientesLocalStorage == null){
+      return new Array<Clientes>();
+    }
+    return clientesLocalStorage
+  }
+
+  get productosLocales(): Productos[]{
+    let productosLocalStorage: Productos[] = JSON.parse(localStorage.getItem("productos"))
+    if(productosLocalStorage == null){
+      return new Array<Productos>();
+    }
+    return productosLocalStorage
+  }
 }
+
