@@ -3,20 +3,20 @@
 <div class="container">
   <h3>Nuevo Cliente</h3>
   <br>
-  <form>
+  <form [formGroup]="formularioAgregar">
     <div class="row">
       <div class="col">
-        <input type="text" class="form-control" placeholder="Nombre">
+        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Apellido">
+        <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido">
       </div>
     </div>
     <br>
     <div class="form-group">
-      <input type="text" class="form-control" id="inputAddress" placeholder="Dirección">
+      <input type="text" class="form-control" id="inputAddress" formControlName="direccion" placeholder="Dirección">
     </div>
     <br>
-    <button type="submit" class="btn btn-primary">Agregar</button>
+    <button [disabled]="!formularioAgregar.valid" (click)="agregar()" type="submit" class="btn btn-primary">Agregar</button>
   </form>
 </div>
