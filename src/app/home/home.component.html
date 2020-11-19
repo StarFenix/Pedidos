@@ -2,24 +2,24 @@
 <div class="container">
   <form class="form-inline">
     <div class="form-group">
-      <input type="" class="form-control" id="" placeholder="Buscar">
+      <input type="" class="form-control" id="" placeholder="Buscar" (input)=buscarClientes($event)>
     </div>
     <button type="submit" class="btn btn-success  mx-sm-3" routerLink="/agregarClientes">Nuevo Cliente</button>
   </form>
   <br>
-  <div class="container">
-    <div class="row">
-      <div class="cols-sm-4">
-        <div class="card bg-light mb-3" style="max-width: 18rem;">
-          <h5 class="card-header">Header</h5>
+
+    <div class="row mt-4">
+      <div class="col-sm-3" *ngFor="let clientes of cliente">
+        <div class="card bg-light mb-3">
+          <h5 class="card-header">{{clientes.nombre}} {{clientes.apellido}}</h5>
           <div class="card-body">
-            <h6>Código</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h6>Código: {{clientes.clienteID}}</h6>
+            <p class="card-text">{{clientes.direccion}}</p>
             <a href="" class="card-link">Agregar</a>
             <a href="" class="card-link">Info</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
+
 </div>
