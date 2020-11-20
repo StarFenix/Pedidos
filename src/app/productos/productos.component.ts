@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Productos } from '../models/productos';
+import { ProductoService } from '../services/producto.service';
 
 @Component({
   selector: 'app-productos',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-
-  constructor() { }
+  producto: Array<Productos> = new Array<Productos>();
+  constructor(public productoServicio: ProductoService) { }
 
   ngOnInit(): void {
+    this.producto = this.productoServicio.productosLocalStorage;
   }
 
+  buscarProductos(event){
+    let nombreBuscar: string = event.target.value;
+    this.producto = this.productoServicio.productosLocalStorage.filter(x=>{
+      return x.nombre.toLocaleLowerCase().includes(nombreBuscar.toLocaleLowerCase())
+    })
+  }
 }

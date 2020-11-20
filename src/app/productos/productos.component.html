@@ -1,3 +1,26 @@
+<br>
 <div class="container">
-  <p>productos works!</p>
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="" class="form-control" id="" placeholder="Buscar Producto" (input)=buscarProductos($event)>
+    </div>
+    <button type="submit" class="btn btn-success  mx-sm-3" routerLink="/agregarProductos">Nuevo Producto</button>
+  </form>
+  <br>
+
+    <div class="row mt-4">
+      <div class="col-sm-3" *ngFor="let productos of producto">
+        <div class="card bg-light mb-3" >
+          <h5 class="card-header">{{ productos.nombre }}</h5>
+          <div class="card-body">
+            <h6>Código: {{ productos.productoID }}</h6>
+            <p class="card-text">{{ productos.descripcion }}</p>
+            <p class="card-text"><b>{{ productos.precio | currency }}</b></p>
+            <a href="" class="card-link">Agregar</a>
+            <a href="" class="card-link">Eliminar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div>

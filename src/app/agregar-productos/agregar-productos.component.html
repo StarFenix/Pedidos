@@ -1,0 +1,19 @@
+<br>
+<div class="container">
+  <h3>Nuevo Producto</h3>
+  <br>
+  <form [formGroup]="formularioAgregar">
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre del Producto">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="descripcion" placeholder="Descripción">
+      </div>
+        <br>
+    <div class="form-group">
+      <input type="number" class="form-control" formControlName="precio" placeholder="Precio">
+    </div>
+    <br>
+    <button [disabled]="!formularioAgregar.valid" (click)="agregar()" type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+</div>

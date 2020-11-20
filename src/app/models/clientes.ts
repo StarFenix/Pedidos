@@ -2,7 +2,7 @@ export class Clientes{
   clienteID: number;
   nombre: string;
   apellido: string;
-  direccion: string;;
+  direccion: string;
 
   constructor(){
     this.clienteID = this.clienteID;
