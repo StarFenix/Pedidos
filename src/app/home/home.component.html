@@ -3,8 +3,9 @@
   <form class="form-inline">
     <div class="form-group">
       <input type="" class="form-control" id="" placeholder="Buscar" (input)=buscarClientes($event)>
-    </div>
+
     <button type="submit" class="btn btn-success  mx-sm-3" routerLink="/agregarClientes">Nuevo Cliente</button>
+    </div>
   </form>
   <br>
 
@@ -15,7 +16,7 @@
           <div class="card-body">
             <h6>Código: {{clientes.clienteID}}</h6>
             <p class="card-text">{{clientes.direccion}}</p>
-            <a href="" class="card-link">Agregar</a>
+            <a (click)="irProductos(clientes)" class="card-link">Agregar</a>
             <a href="" class="card-link">Eliminar</a>
           </div>
         </div>

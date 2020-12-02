@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Productos } from '../models/productos';
+import { PedidosService } from '../services/pedidos.service';
 import { ProductoService } from '../services/producto.service';
 
 @Component({
@@ -9,16 +10,22 @@ import { ProductoService } from '../services/producto.service';
 })
 export class ProductosComponent implements OnInit {
   producto: Array<Productos> = new Array<Productos>();
-  constructor(public productoServicio: ProductoService) { }
+  constructor(public productoServicio: ProductoService, public pedidoServicio: PedidosService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.producto = this.productoServicio.productosLocalStorage;
   }
 
-  buscarProductos(event){
-    let nombreBuscar: string = event.target.value;
-    this.producto = this.productoServicio.productosLocalStorage.filter(x=>{
-      return x.nombre.toLocaleLowerCase().includes(nombreBuscar.toLocaleLowerCase())
+  buscarProductos(nombreBuscar){
+    //let nombreBuscar: string = event.target.value;
+    this.producto = this.productoServicio.productosLocalStorage.filter(producto=>{
+      return producto.nombre.toLocaleLowerCase().includes(nombreBuscar.toLocaleLowerCase())
     })
+  }
+
+  agregar(productos: Productos){
+    this.pedidoServicio.pedido.agregarProducto(productos);
+    console.log(this.pedidoServicio.pedido);
+
   }
 }

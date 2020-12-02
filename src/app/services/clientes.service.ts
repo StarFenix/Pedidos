@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Clientes } from '../models/clientes';
-
+import { JsonPipe } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +9,8 @@ export class ClientesService {
   constructor() { }
 
   agregarLocalStorage(cliente: Clientes){
-    let clientesAntiguos: Clientes[] = this.clientesLocalStorage
+    let clientesAntiguos: Clientes[] = this.clientesLocalStorage;
+    debugger
     cliente.clienteID = clientesAntiguos.length + 1;
     clientesAntiguos.push(cliente)
     localStorage.setItem ("clientes", JSON.stringify(clientesAntiguos));

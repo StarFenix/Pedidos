@@ -10,7 +10,7 @@ import { ProductoService } from '../services/producto.service';
 })
 export class AgregarProductosComponent implements OnInit {
   formularioAgregar: FormGroup;
-  producto: Productos = new Productos();
+  //producto: Productos = new Productos();
   constructor(private fb: FormBuilder, public productoServicio: ProductoService) { }
 
   ngOnInit(): void {
@@ -22,8 +22,8 @@ export class AgregarProductosComponent implements OnInit {
   }
 
   agregar(){
-    this.producto = this.formularioAgregar.value as Productos;
-    this.productoServicio.agregarLocalStorage(this.producto)
+    //this.producto = this.formularioAgregar.value as Productos;
+    this.productoServicio.agregarLocalStorage(this.formularioAgregar.value)
     this.formularioAgregar.reset()
   }
 

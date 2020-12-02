@@ -1,8 +1,8 @@
 <br>
 <div class="container">
-  <form class="form-inline">
+  <form class="form-group">
     <div class="form-group">
-      <input type="" class="form-control" id="" placeholder="Buscar Producto" (input)=buscarProductos($event)>
+      <input type="" class="form-control" id="" placeholder="Buscar Producto" (input)=buscarProductos($event.target.value)>
     </div>
     <button type="submit" class="btn btn-success  mx-sm-3" routerLink="/agregarProductos">Nuevo Producto</button>
   </form>
@@ -16,7 +16,7 @@
             <h6>Código: {{ productos.productoID }}</h6>
             <p class="card-text">{{ productos.descripcion }}</p>
             <p class="card-text"><b>{{ productos.precio | currency }}</b></p>
-            <a href="" class="card-link">Agregar</a>
+            <a (click)="agregar(productos)" class="card-link">Agregar</a>
             <a href="" class="card-link">Eliminar</a>
           </div>
         </div>

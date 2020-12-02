@@ -9,7 +9,7 @@ import { ClientesService } from '../services/clientes.service';
 })
 export class AgregarClientesComponent implements OnInit {
   formularioAgregar: FormGroup
-  cliente: Clientes = new Clientes()
+  cliente: Clientes = new Clientes();
   constructor(private fb: FormBuilder, public clienteServicio: ClientesService) { }
 
   ngOnInit(): void {
