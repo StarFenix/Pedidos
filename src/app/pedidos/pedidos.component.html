@@ -1,3 +1,33 @@
+<br>
 <div class="container">
-  <p>pedidos works!</p>
+  <div class="cliente">
+    <h5>Cliente: {{this.pedidoServicio.pedido.nombreCliente}}</h5>
+    <br>
+  </div>
+  <div class="detalle">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Precio Unitario</th>
+          <th scope="col">Sub Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of this.pedidoServicio.pedido.detallePedido">
+          <th scope="row">{{producto.productoID}}</th>
+          <td>{{producto.nombreProducto}}</td>
+          <td>{{producto.cantidad}}</td>
+          <td>{{producto.precio | currency}}</td>
+          <td>{{producto.total | currency}}</td>
+        </tr>
+        <tr>
+          <th colspan="4"><h5> Total</h5></th>
+          <td><h5>{{this.pedidoServicio.pedido.total | currency}}</h5></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
