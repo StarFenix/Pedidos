@@ -8,7 +8,16 @@ export class Pedido{
   total: number;
   detallePedido: Array<DetallePedido>;
 
-  constructor(){
+  constructor(datos? : Pedido){
+    if(datos != null){
+      this.pedidoID = datos.pedidoID;
+      this.clienteID = datos.clienteID;
+      this.nombreCliente = datos.nombreCliente;
+      this.total = datos.total;
+      this.detallePedido = datos.detallePedido;
+      return;
+    }
+
     this.pedidoID = this.pedidoID;
     this.clienteID = this.clienteID;
     this.nombreCliente = this.nombreCliente;

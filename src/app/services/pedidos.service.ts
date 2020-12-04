@@ -8,6 +8,19 @@ import { Productos } from '../models/productos';
 })
 export class PedidosService {
   pedido: Pedido = new Pedido();
-  constructor() { }
+  constructor() {
+    this.pedido = this.ultimoPedido;
+  }
 
+  guardarLocalStorage(){
+    localStorage.setItem("ultimoPedido", JSON.stringify(this.pedido))
+  }
+
+  get ultimoPedido(): Pedido{
+    let pedidoDesdeLocalStorage: Pedido = new Pedido(JSON.parse(localStorage.getItem("ultimoPedido")))
+    if(pedidoDesdeLocalStorage == null){
+      return new Pedido();
+    }
+    return pedidoDesdeLocalStorage;
+  }
 }
