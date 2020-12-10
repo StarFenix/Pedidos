@@ -13,5 +13,9 @@ export class PedidosComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  calcularTotal(posicion: number){
+    this.pedidoServicio.pedido.actualizarCantidades(posicion)
+    this.pedidoServicio.guardarLocalStorage();
+  }
 
 }
