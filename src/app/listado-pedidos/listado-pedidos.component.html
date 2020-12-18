@@ -1,0 +1,21 @@
+<br>
+<div class="container">
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="" class="form-control" id="" placeholder="Buscar">
+      <button type="submit" class="btn btn-success  mx-sm-3" routerLink="/">Nuevo Pedido</button>
+    </div>
+  </form>
+  <br>
+  <div class="row mt-4">
+    <div class="col-sm-3" *ngFor= "let pedido of listadoPedidos">
+      <div class="card bg-light mb-3">
+        <h5 class="card-header">{{ pedido.nombreCliente }}</h5>
+        <div class="card-body">
+          <h6>Total: {{pedido.total | currency}}</h6>
+          <p class="card-text">No. Artículos: {{pedido.detallePedido.length}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

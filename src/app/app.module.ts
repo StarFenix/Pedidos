@@ -13,6 +13,7 @@ import { ClientesService } from './services/clientes.service';
 import { ProductoService } from './services/producto.service';
 import { PedidosService } from './services/pedidos.service';
 import { AgregarProductosComponent } from './agregar-productos/agregar-productos.component';
+import { ListadoPedidosComponent } from './listado-pedidos/listado-pedidos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AgregarProductosComponent } from './agregar-productos/agregar-productos
     PedidosComponent,
     HomeComponent,
     AgregarClientesComponent,
-    AgregarProductosComponent
+    AgregarProductosComponent,
+    ListadoPedidosComponent
   ],
   imports: [
     BrowserModule,
