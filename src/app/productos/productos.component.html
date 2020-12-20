@@ -16,8 +16,7 @@
             <h6>Código: {{ productos.productoID }}</h6>
             <p class="card-text">{{ productos.descripcion }}</p>
             <p class="card-text"><b>{{ productos.precio | currency }}</b></p>
-            <a (click)="agregar(productos)" class="card-link">Agregar</a>
-            <a href="" class="card-link">Eliminar</a>
+            <button class="btn btn-info" (click)="agregar(productos)">+</button>
           </div>
         </div>
       </div>

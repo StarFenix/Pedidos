@@ -14,5 +14,11 @@ export class ListadoPedidosComponent implements OnInit {
   ngOnInit(): void {
     this.listadoPedidos = this.pedidoServicio.listadoPedidosLocalStorage;
   }
+  buscarPedido(nombreBuscar){
+    //let nombreBuscar: string = event.target.value;
+    this.listadoPedidos = this.pedidoServicio.listadoPedidosLocalStorage.filter(listadoPedidos=>{
+      return listadoPedidos.nombreCliente.toLocaleLowerCase().includes(nombreBuscar.toLocaleLowerCase())
+    })
+  }
 
 }

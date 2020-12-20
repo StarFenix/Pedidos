@@ -13,6 +13,7 @@
           <th scope="col">Cantidad</th>
           <th scope="col">Precio Unitario</th>
           <th scope="col">Subtotal</th>
+          <th scope="col">Eliminar</th>
         </tr>
       </thead>
       <tbody>
@@ -22,9 +23,10 @@
           <td><input (input)="calcularTotal(posicion)" [(ngModel)]="producto.cantidad" type="text" class="cantidad"> </td>
           <td>{{producto.precio | currency}}</td>
           <td>{{producto.total | currency}}</td>
+          <td><button class="btn btn-danger" (click)="eliminar(posicion)"></button> </td>
         </tr>
         <tr>
-          <th colspan="4"><h5> Total</h5></th>
+          <th colspan="5"><h5> Total</h5></th>
           <td><h5>{{this.pedidoServicio.pedido.total | currency}}</h5></td>
         </tr>
       </tbody>

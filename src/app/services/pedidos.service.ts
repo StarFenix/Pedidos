@@ -31,12 +31,13 @@ export class PedidosService {
     localStorage.setItem("pedidos", JSON.stringify(listadoPedidos))
     localStorage.removeItem("ultimoPedido");
     this.pedido = new Pedido(null);
+    alert("Pedido Exitoso");
   }
   get listadoPedidosLocalStorage(): Pedido[]{
     let pedidos: Pedido[] = JSON.parse(localStorage.getItem("pedidos"))
     if(pedidos == null){
       return new Array<Pedido>();
     }
-    return pedidos;
+    return pedidos.sort((a,b)=> b.pedidoID - a.pedidoID);
   }
 }
