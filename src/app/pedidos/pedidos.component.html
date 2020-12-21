@@ -1,14 +1,17 @@
 <br>
 <div class="container">
   <div class="cliente">
-    <h5>Cliente: {{this.pedidoServicio.pedido.nombreCliente}}</h5>
+    <h5>
+      <i class="fa fa-user" aria-hidden="true"></i>
+      Cliente: {{this.pedidoServicio.pedido.nombreCliente}}
+    </h5>
     <br>
   </div>
   <div class="detalle">
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col"><i class="fa fa-barcode" aria-hidden="true"></i></th>
           <th scope="col">Producto</th>
           <th scope="col">Cantidad</th>
           <th scope="col">Precio Unitario</th>
@@ -23,7 +26,7 @@
           <td><input (input)="calcularTotal(posicion)" [(ngModel)]="producto.cantidad" type="text" class="cantidad"> </td>
           <td>{{producto.precio | currency}}</td>
           <td>{{producto.total | currency}}</td>
-          <td><button class="btn btn-danger" (click)="eliminar(posicion)"></button> </td>
+          <td><button class="btn btn-danger" (click)="eliminar(posicion)"><i class="fa fa-trash-o" aria-hidden="true"></i></button> </td>
         </tr>
         <tr>
           <th colspan="5"><h5> Total</h5></th>
@@ -31,6 +34,6 @@
         </tr>
       </tbody>
     </table>
-    <button class="btn btn-success" (click)="guardar()">Guardar</button>
+    <button class="btn btn-success" (click)="guardar()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
   </div>
 </div>

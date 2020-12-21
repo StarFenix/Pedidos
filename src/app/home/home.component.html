@@ -4,7 +4,7 @@
     <div class="form-group">
       <input type="" class="form-control" id="" placeholder="Buscar" (input)=buscarClientes($event)>
 
-    <button type="submit" class="btn btn-success  mx-sm-3" routerLink="/agregarClientes">Nuevo Cliente</button>
+    <button type="submit" class="btn btn-success  mx-sm-3" routerLink="/agregarClientes"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo Cliente</button>
     </div>
   </form>
   <br>
@@ -16,7 +16,7 @@
           <div class="card-body">
             <h6>Código: {{clientes.clienteID}}</h6>
             <p class="card-text">{{clientes.direccion}}</p>
-            <button class="btn btn-info" (click)="irProductos(clientes)">+</button>
+            <button class="btn btn-info" (click)="irProductos(clientes)"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
           </div>
         </div>
       </div>

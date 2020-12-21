@@ -1,22 +1,32 @@
 <div class="container">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="">Clientes</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink= "/productos">Productos</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="listadoPedidos">Lista de Pedidos</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="pedidos">Pedido Actual</a>
-    </li>
-    <li class="navbar-text">
-      {{this.pedidoServicio.pedido.nombreCliente}}
-    </li>
-    <li class="navbar-text" align="rigth">
-      No. Artículos: {{this.pedidoServicio.pedido.detallePedido.length}}
-    </li>
-  </ul>
+  <nav class="navbar navbar-expand-md navbar-light bg-light mb-4" style="background-color: #f2e9f5!important;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink=""><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink= "/productos"><i class="fa fa-gamepad" aria-hidden="true"></i> Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="listadoPedidos"><i class="fa fa-list" aria-hidden="true"></i> Lista de Pedidos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="pedidos"><i class="fa fa-clock-o" aria-hidden="true"></i> Pedido Actual</a>
+        </li>
+      </ul>
+      <li class="navbar-text">
+        <i class="fa fa-user" aria-hidden="true"> </i>
+        {{this.pedidoServicio.pedido.nombreCliente}}
+      </li>
+      <li class="navbar-text" routerLink="/productos">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        {{this.pedidoServicio.pedido.detallePedido.length}}
+      </li>
+    </div>
+  </nav>
 </div>
+
